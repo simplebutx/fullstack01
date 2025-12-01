@@ -10,7 +10,7 @@ app.use(express.json());
 // CORS 설정
 const allowedOrigins = [
   'http://localhost:5173',
-   process.env.FRONTEND_URL,
+   env.FRONTEND_URL,
 ];
 
 app.use(
