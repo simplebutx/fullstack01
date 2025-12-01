@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
-
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+  
 function App() {
   const [msg, setMsg] = useState('백엔드랑 아직 통신 전');
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/hello')
+    fetch(`${API_BASE_URL}/api/hello`)
       .then((res) => res.json())
       .then((data) => setMsg(data.msg))
       .catch((err) => {
